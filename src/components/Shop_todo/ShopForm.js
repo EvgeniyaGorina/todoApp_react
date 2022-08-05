@@ -4,7 +4,7 @@ class ShopForm  extends React.Component {
 constructor(props){
     super(props);
     this.state = {
-        value:'Neco'
+        value:' '
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -15,10 +15,6 @@ handleChange(event){
 handleSubmit(event){
     const value = this.state.value
     event.preventDefault();
-    // this.props.onSubmit({
-    //     id:Math.floor(Math.random()*100),
-    //     text:this.state.value
-    // })
     this.props.addShop(value)
     console.log("aaaa", value)
     this.setState({value:""});
