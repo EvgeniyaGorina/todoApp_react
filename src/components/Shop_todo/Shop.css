@@ -1,6 +1,87 @@
-.remove-not-visible{
+
+.shop-form{
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+    top: 3vw;
+    left: 17%;  
+}
+ .shop-input{
+        width: 20vw;
+        display: flex;
+        align-items: center;
+        border-radius: 60px;
+        padding: 1vw 5vw;
+        position: absolute;
+        top: -8vw;
+        left: 1vw;
+        transform: translate(-8vw);  
+        outline: none;
+        font-size: 14px;
+        text-transform: capitalize;
+        border: 1.8px solid #968f8f;
+        box-shadow: 0 5px 10px rgba(99, 98, 98, 0.29);
+} 
+.shop-btn{
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    position: absolute;
+    top: -7vw;
+    left: 17.5%;
+    transform: translate(1vw);  
+    color:#302b2b;
+    text-transform: uppercase;
+}
+
+.not-visible{
     display: none;
 }
-.remove{
+
+.edit-input{
     display: block;
+}
+
+.btn-custom, .btn-edit{
+    box-shadow: 0 5px 10px rgb(56 56 56 / 50%);
+    display: block;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    background-color: white ;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    transform: translate(5px, -14px);
+    left: 42vw;
+}
+    .btn-custom{
+    background-image: url(https://img.icons8.com/windows/32/000000/delete-forever.png);
+    }
+    .btn-edit{
+    background-image: url(https://img.icons8.com/windows/32/000000/delete-forever.png);
+    }  
+
+    ul.list{
+    margin-top: 6%;
+    }
+    ul.list > li{
+    color: white;
+    font-weight: 500;
+    width: 40vw;
+    list-style-type: none;
+    display: block;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 5px 10px rgb(118 118 118 / 50%);
+    padding: 6px 4.5rem 0px 15px;
+    margin: 1rem 0;
+    position: relative;
+    text-overflow: ellipsis;
+    white-space: nowrap; 
+    overflow: hidden;
+    outline: none;
+    border-radius: 12px;
+    background:#fc46aa;
 }

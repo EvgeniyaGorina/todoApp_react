@@ -6,7 +6,7 @@ class ShopList extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            arr:[]
+            arr:[] 
         }
     }
 
@@ -15,30 +15,41 @@ class ShopList extends React.Component {
         return;
     }
     const index = Math.floor(Math.random() * 1000);
-    const contObject = {"id":index, "text": item};
+    const contObject = {"id":index, "text": item, "render":false};
     const newShops = [contObject, ...this.state.arr];
     console.log(this.state.arr);
     this.setState({arr:newShops});
  };
 
   removeItem =(id) => {
-  // let arrRem = this.state.inputArr.splice(0,1)
   console.log(this.state);
   let newArr = this.state.arr.filter((i) => i.id !== id);
   console.log(id);
-  // console.log(JSON.stringify(this.state.arr));
-  // console.log(JSON.stringify(newArr));
   this.setState({
     arr: newArr
-    // inputArr: arrRem
   })
 }
+// update =(id, newValue)=>{
+//   if(!newValue || /^\s*$/.test(newValue)){
+//     return;
+// }
+//   console.log('id>> ' +id + 'val>> ' + newValue);
+// }
+// edit = (id, newValue) => {
+//   this.state.arr.map((i) => i.id === id ? i.text= newValue : i.text);
+//   return newValue;
+// }
 
+// toggle = (id) => {
+//   this.state.arr.map((i) => i.id === id ? i.render= true : i.render = false);
+
+// }
   render() {
     return (
       <div>
         <ShopForm addShop = {this.addShop}/>
-        <Shop arrayInput={this.state.arr} removeItem ={this.removeItem}/>
+        <Shop arrayInput={this.state.arr} removeItem ={this.removeItem}/> 
+        {/* update={this.update} toggle={this.toggle} edit={this.edit} */}
       </div>
     )
   }

@@ -9,22 +9,13 @@ class Shop extends React.Component {
   state = {
         inputArr:this.props.arrayInput
       }
+// Function looks like for nothing
+//  handleRemove(objectId){  
+//  this.props.removeItem(objectId)
+//  }
 
- handleRemove(objectId){
- this.props.removeItem(objectId)
- }
-//   removeItem(id) {
-//     let arrRem = this.state.inputArr.splice(0,1)
-//     console.log(JSON.stringify(this.state.inputArr));
-//     let newArr = this.state.inputArr.filter((i) => i.id !== id);
-//     console.log(id);
-//     console.log(JSON.stringify(this.state.inputArr));
-//     console.log(JSON.stringify(newArr));
-//     this.setState({
-//       // inputArr: newArr
-//       inputArr: arrRem
-//     });
-//     // objArr.splice(0, 1)
+
+
 
     render() {
     // let liElements = []
@@ -38,12 +29,18 @@ class Shop extends React.Component {
     return (
       
       <div>
-        {/* Render array from props as <ul>, cykl pres pole */}
-        <ul>
+        {/* Render array from props as <ul>, cycle through array */}
+        <ul className='list'>
             {
-            this.props.arrayInput.map((object)=> <li>{object.text}       
-             <button className={this.props.arrayInput.length < 1 ? "remove-not-visible" : "remove"} onClick= {() => this.props.removeItem(object.id)}>remove
-            </button> </li>)
+            this.props.arrayInput.map((object)=> <li>{object.text}
+            {/* <form className={!object.render ? "not-visible" : "edit-input"} onSubmit={this.props.update(object.id, object.text)}>
+            <input type="text" value={object.text} onChange={this.props.edit(object.id, object.text)}/>
+            <button>Update</button>
+            </form> */}
+             <button className={this.props.arrayInput.length < 1 ? "not-visible" : "btn btn-custom"} onClick= {() => this.props.removeItem(object.id)}>
+            </button>
+              {/*<button className={!object.text ? "not-visible" : "btn-edit"} onClick={() => this.props.toggle(object.id)}></button> </li>) */}
+              </li>)
             }
         </ul>
 
