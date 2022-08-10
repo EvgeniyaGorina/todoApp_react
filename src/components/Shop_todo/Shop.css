@@ -1,4 +1,4 @@
-
+/* 
 .shop-form{
     padding: 0;
     box-sizing: border-box;
@@ -84,4 +84,19 @@
     outline: none;
     border-radius: 12px;
     background:#fc46aa;
+} */
+.alert{
+    border: 2px solid red;
+}
+.hidden{
+display: none;
+}
+.visible{
+display: block;
+}
+.visible-text{
+    display: block;
+}
+.hidden-text{
+    display: none;
 }
