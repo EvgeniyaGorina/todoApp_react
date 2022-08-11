@@ -9,10 +9,10 @@ class ShopList extends React.Component {
       arr: [],
     };
   }
-  
-  addQuantity = (item) => {
-    this.numberValidation(item);
-  }
+
+  // addQuantity = (item) => {
+  //   this.numberValidation(item);
+  // }
 
   addShop = (item) => {
     console.log(item);
@@ -41,7 +41,7 @@ class ShopList extends React.Component {
 
   edit = (id, newValue) => {
     console.log("setting new value ", id, newValue)
-    const newArr = this.state.arr.map((i) => (i.id === id ? {...i, text:newValue} : i));
+    const newArr = this.state.arr.map((i) => (i.id === id ? {...i, quantity: newValue.quantity, text: newValue.value} : i));
     console.log(newArr)
     this.setState({
       arr: newArr,

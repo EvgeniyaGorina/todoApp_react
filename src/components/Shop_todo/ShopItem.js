@@ -1,5 +1,6 @@
 import React from "react";
 import ShopInputQuantity from "../ShopInputQuantity";
+import ShopInputText from "../ShopInputText";
 import ShopForm from "./ShopForm";
 
 class ShopItem extends React.Component {
@@ -11,12 +12,12 @@ class ShopItem extends React.Component {
   }
 
 
-  update = (id, newValue) => {
-    if (!newValue || /^\s*$/.test(newValue)) {
-      return;
-    }
-    console.log(" vypise id>> " + id + "vypise val>> " + newValue);
-  };
+//   update = (id, newValue) => {
+//     if (!newValue || /^\s*$/.test(newValue)) {
+//       return;
+//     }
+//     console.log(" vypise id>> " + id + "vypise val>> " + newValue);
+//   };
 
   handleEdit = (value) => {
     this.props.edit(this.props.object.id, value)
@@ -24,6 +25,7 @@ class ShopItem extends React.Component {
         {...this.state, isEditing: false}
     )
   }
+  
   handleSubmit=(event)=>{
     if(!this.state.isEditing) {
         this.setState(
@@ -46,8 +48,9 @@ class ShopItem extends React.Component {
     console.log(this.props);
     return this.state.isEditing ? (
       <li>
-        <ShopForm addShop = {this.handleEdit} editValue={this.props.object.text}/>
-        <ShopInputQuantity/>
+        <ShopForm addShop = {this.handleEdit} editValue={this.props.object}/>
+        {/* <ShopInputQuantity/>
+        <ShopInputText/> */}
       </li>
     ) : (
       <li>

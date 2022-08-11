@@ -2,13 +2,12 @@ import React from "react";
 // import ShopForm from "./Shop_todo/ShopForm";
 
 class ShopInputQuantity extends React.Component {
-  constructor(props) {
+    constructor(props) {
     super(props);
     this.state = {
       value: this.props.value,
       error: false
     };
-    //this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange = (event) => {
@@ -22,15 +21,15 @@ class ShopInputQuantity extends React.Component {
        this.setState({error:true})
        return false;
      }
-     if (parseInt(value) <= 0) {
+    if (parseInt(value) <= 0) {
        console.log("Should be greater than 0");
        this.setState({error:true})
        return false;
      }
-     console.log("OK");
-     this.setState({error:false})
-     return true
-   }
+    console.log("OK");
+    this.setState({error:false})
+    return true
+     }
 
   getValue = () => {
     return this.state.value
@@ -38,19 +37,20 @@ class ShopInputQuantity extends React.Component {
 
   render() {
     const classes = "shop-input";
-    const alerClasses = "shop-input alert";
+    const alertClasses = "shop-input alert";
     const textClasses ="visible";
     const textAlertClasses = "hidden";
     return (
       <div>
         <input
+          value={this.state.value}
           type="number"
           min="0"
           placeholder="Quantity"
           onChange={this.handleChange}
-          className={!this.state.error ? classes : alerClasses}
+          className={!this.state.error ? classes : alertClasses}
         />
-        <div className={!this.state.error ?  textAlertClasses : textClasses}>Error</div>
+        <div className={!this.state.error ?  textAlertClasses: textClasses}>Error</div>
       </div>
     );
   }
